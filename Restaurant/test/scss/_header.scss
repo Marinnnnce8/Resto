@@ -1,0 +1,123 @@
+header {
+    width: 100%;
+    height: 85px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    .header-wrapper {
+        width: 80%;
+        margin: 0 auto;
+
+        .logo {
+            float: left;
+            width: 100px;
+            height: 60px;
+            background: url('../images/logo.png') no-repeat center;
+            display: block;
+        }
+
+        .menu-icon {
+            display: hidden;
+        }
+
+        .dropdown-menu {
+            display: hidden;
+            position: relative;
+            background: #a096a0;
+            float: left;
+        }
+
+        nav {
+            float: right;
+            margin-top: 1%;
+
+            ul {
+                list-style: none;
+
+                li {
+                    float: left;
+                    display: inline-block;
+                    padding-left: 10px;
+                
+                    a {
+                        text-decoration: none;
+                        color: $black;
+                        font-weight: bold;
+                    }
+                    & :hover {
+                        text-decoration: underline;
+                    } 
+                    
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:680px){
+    header {
+        position: absolute;
+        height: 45px;
+
+        .header-wrapper{
+            width: 15%;
+            margin: 0 auto;
+
+            .dropdown-menu {
+                width: 100%;
+                height: 39px;
+                position: absolute;
+                right: 0;
+                top: 45px;
+
+                .menu-icon {
+                    width: 32px;
+                    height: 32px;
+                    float: right;
+                    background:url('../img/search.png') no-repeat;
+                    margin-top: 10px;
+                }
+            }
+
+            .logo {
+               height: 45px;
+            }
+
+            nav {   
+            background: #414041;
+            }
+
+            nav ul, nav:active ul {
+                display: none;
+                position: absolute;
+                width: 100%;
+                background: $nav-color;
+                padding: 0;
+                margin: 0;
+                right: 0;
+                background: #515051;
+                top: 84px;
+            }
+
+            li {
+                padding: 15px 0;
+                width: 100%;
+                margin: 0;
+                padding-left: 0!important;
+
+                a {
+                    color: #ffffff!important;
+                    margin-left: 15px;
+                }
+            }
+            nav:hover ul {
+                display: block;
+            }
+            nav li:not(last-child){
+                border-bottom: 1px solid #363436;
+            }
+        }  
+    }
+}
